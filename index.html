@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>James | Fiber Networks, Infrastructure and AI</title>
+  <meta name="description" content="I'm James, a Tier 2 Technical Support Lead working across fiber networks, infrastructure and AI. I run a self-hosted homelab and build my own tools.">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="James | Fiber Networks, Infrastructure and AI">
+  <meta property="og:description" content="I took my first computer apart to see how it worked. Now I work across fiber networks, infrastructure and AI.">
+  <meta property="og:url" content="https://hufflabs.dev/">
+  <link rel="canonical" href="https://hufflabs.dev/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <a class="brand" href="#main">James</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#homelab">Homelab</a>
+      <a href="#beyond">Beyond work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="hero">
+      <div>
+        <h1>I took my first computer apart to see how it worked.</h1>
+        <p class="lede">Tier 2 Technical Support Lead working across fiber networks, infrastructure and AI. Still taking things apart, and building a lot more of them.</p>
+        <p class="actions"><a href="#projects">See my projects</a><a href="#contact">Get in touch</a></p>
+      </div>
+      <svg class="strands" viewBox="0 0 300 220" aria-hidden="true">
+        <path d="M0 40C80 40 90 110 150 110s70-70 150-70"/>
+        <path d="M0 70C80 70 90 112 150 112s70-42 150-42"/>
+        <path d="M0 100C80 100 90 114 150 114s70-14 150-14"/>
+        <path d="M0 130C80 130 90 116 150 116s70 14 150 14"/>
+        <path d="M0 160C80 160 90 118 150 118s70 42 150 42"/>
+        <path d="M0 190C80 190 90 120 150 120s70 70 150 70"/>
+        <circle cx="150" cy="115" r="9"/>
+      </svg>
+    </div>
+
+    <section id="about">
+      <h2>About</h2>
+      <div>
+        <p>My brother had just bought a Sony VAIO running Windows 95, a brand-new $3,000 machine, and I needed to know what was inside. I took it apart and got it back together working. He was furious. I was hooked.</p>
+        <p>That curiosity turned into A+ and Network+ certifications in high school, then a job in Walmart's tech department, working with game systems, TVs, printers, the photo lab and wireless phones, back in the days of 3G and physical SIM cards.</p>
+        <p>I wanted more. During the pandemic I joined Vero Fiber and moved into a lead role. That work also started my homelab, which grew quickly and led me to learn everything I could about AI.</p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div>
+        <article class="item">
+          <h3>Tier 2 Technical Support Lead</h3>
+          <p class="meta">Vero Fiber, fiber-to-the-home and enterprise circuit provider</p>
+          <p>Started in Tier 2 support and moved into a lead role that also includes NOC work and engineering tasks like load balancing traffic and monitoring for intrusions. Because the company was young, there was plenty to build: I helped create internal tools, designed the documentation center we use today, and helped bring AI into daily reporting and network monitoring.</p>
+        </article>
+        <article class="item">
+          <h3>Tech Department</h3>
+          <p class="meta">Walmart</p>
+          <p>Supported customers across game systems, TVs, printers, the photo lab and wireless phones.</p>
+        </article>
+        <div class="columns">
+          <div>
+            <h3>Education</h3>
+            <p>BS, Cybersecurity<br><span class="note">Southern New Hampshire University</span></p>
+            <p>AS, Information Systems Networking<br><span class="note">Reedley College</span></p>
+          </div>
+          <div>
+            <h3>Certifications</h3>
+            <p>CompTIA A+ and Network+<br><span class="note">CCNA and Juniper certification in progress</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div>
+        <article class="item">
+          <h3><a href="https://github.com/n0rthstar88/homelab-oncall-agent">Homelab On-Call Agent</a></h3>
+          <p class="meta">Python · Checkmk · Proxmox · AI agents</p>
+          <p>Self-healing monitoring. Known problems get a safe, allowlisted fix, and anything else goes to an AI agent that can only act through a security gatekeeper I built.</p>
+        </article>
+        <article class="item">
+          <h3><a href="https://github.com/n0rthstar88/homelab-watchdog">Homelab Watchdog</a></h3>
+          <p class="meta">Python · Discord</p>
+          <p>A security and availability monitor that alerts only when something changes, and takes commands from Discord.</p>
+        </article>
+        <article class="item">
+          <h3><a href="https://github.com/n0rthstar88/peripheralhub">PeripheralHub</a></h3>
+          <p class="meta">Python · GTK4</p>
+          <p>A Linux desktop app for keyboard, mouse, display and battery settings, talking directly to the hardware.</p>
+        </article>
+        <article class="item">
+          <h3><a href="https://github.com/n0rthstar88/omarchy-snap-layouts">Snap Layouts for Omarchy</a></h3>
+          <p class="meta">QML · Lua</p>
+          <p>Drag a window to the top of the screen to pick a layout.</p>
+        </article>
+        <article class="item">
+          <h3><a href="https://github.com/gravestench/dark-magic/pulls?q=is%3Apr+is%3Amerged+author%3An0rthstar88">Dark Magic</a></h3>
+          <p class="meta">Go · Lua · 18 merged pull requests</p>
+          <p>Contributions to an open-source Diablo II engine, working with a team through code review.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="homelab">
+      <h2>Homelab</h2>
+      <div>
+        <p>HuffLabs is the self-hosted environment I designed, secured and run day to day.</p>
+        <dl class="columns">
+          <div><dt>Virtualization</dt><dd>Proxmox VE, LXC, VMs, Docker</dd></div>
+          <div><dt>Storage and backups</dt><dd>TrueNAS SCALE, ZFS, encrypted restic backups</dd></div>
+          <div><dt>Networking</dt><dd>Filtering DNS, reverse proxy with TLS, Tailscale, Cloudflare Tunnels</dd></div>
+          <div><dt>Identity and security</dt><dd>Authentik SSO, role-based firewall rules, fail2ban, recurring audits</dd></div>
+          <div><dt>Monitoring</dt><dd>Checkmk and my own tools</dd></div>
+          <div><dt>Operations</dt><dd>Runbooks, incident write-ups, disaster recovery docs</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="beyond">
+      <h2>Beyond work</h2>
+      <div>
+        <p>I like making things I can hold, and games with good stories.</p>
+        <dl class="columns four">
+          <div><dt>3D printing</dt><dd>Taking ideas from a screen to something real.</dd></div>
+          <div><dt>Resin design</dt><dd>Designing and casting my own dice.</dd></div>
+          <div><dt>D&amp;D</dt><dd>Where those dice get put to work.</dd></div>
+          <div><dt>Magic: The Gathering</dt><dd>Still a favorite way to spend an evening.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div>
+        <p class="email"><a href="mailto:james@hufflabs.dev">james@hufflabs.dev</a></p>
+        <p class="note"><a href="https://github.com/n0rthstar88">GitHub</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>James · HuffLabs</footer>
+</body>
+</html>
