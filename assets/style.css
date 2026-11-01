@@ -46,7 +46,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 76px; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
@@ -77,13 +77,24 @@ a:hover { color: var(--quiet); }
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: baseline;
-  gap: 4px 24px;
-  padding: 18px max(var(--gutter), calc((100% - 1160px) / 2 + var(--gutter)));
+  align-items: center;
+  gap: 8px 24px;
+  padding: 12px max(var(--gutter), calc((100% - 1160px) / 2 + var(--gutter)));
   background: var(--paper);
   border-bottom: 1px solid var(--rule);
 }
-.brand { font: 400 20px var(--serif); text-decoration: none; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.brand:hover { color: inherit; }
+.mark { flex: none; display: block; }
+.mark-strands, .mark-case { fill: none; stroke-width: 1.6; stroke-linecap: round; }
+.mark-strands { stroke: var(--strand); }
+.mark-case { stroke: var(--ink); }
+.mark-dot { fill: var(--ink); }
+.mark-fill { fill: var(--strand); }
+.brand-text { display: flex; flex-direction: column; }
+.wordmark { font: 400 21px/1.15 var(--serif); letter-spacing: -0.01em; }
+.wordmark i { font-weight: 300; color: var(--soft); }
+.slogan { font-size: 11.5px; line-height: 1.35; color: var(--quiet); }
 .top nav { display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 14px; color: var(--soft); }
 .top nav a { text-decoration: none; }
 .top nav a:hover { text-decoration: underline; color: var(--ink); }
