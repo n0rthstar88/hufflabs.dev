@@ -20,6 +20,16 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
+  <svg class="sprite" width="0" height="0" aria-hidden="true">
+    <defs>
+      <g id="wave">
+        <path d="M0 8C200 8 300 20 420 14S640 2 800 14 1040 22 1160 12"/>
+        <path d="M0 20C200 20 300 8 420 14S640 26 800 14 1040 4 1160 16"/>
+        <circle class="wave-node" cx="420" cy="14" r="3.5"/>
+      </g>
+    </defs>
+  </svg>
+
   <header class="top">
     <a class="brand" href="#main">
       <svg class="mark" viewBox="0 0 36 44" width="32" height="39" aria-hidden="true">
@@ -68,8 +78,10 @@
       </svg>
     </div>
 
+    <svg class="wave" viewBox="0 0 1160 28" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#wave"/></svg>
+
     <section id="about">
-      <div class="about-side">
+      <div class="side">
         <h2>About</h2>
         <img class="portrait" src="assets/photos/portrait.jpg" width="392" height="392" alt="Portrait of James">
       </div>
@@ -80,10 +92,13 @@
       </div>
     </section>
 
+    <svg class="wave flip" viewBox="0 0 1160 28" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#wave"/></svg>
+
     <section id="experience">
       <h2>Experience</h2>
       <div>
-        <article class="item">
+        <div class="timeline">
+        <article class="item now">
           <h3>Technical Support Lead</h3>
           <p class="meta">Vero Networks, fiber-to-the-home and enterprise circuit provider · Jan 2026 to present</p>
           <p>A lead role that also includes NOC work and engineering tasks like load balancing traffic and monitoring for intrusions. Because the company was young, there was plenty to build: I helped create internal tools, designed the documentation center we use today, and helped bring AI into daily reporting and network monitoring.</p>
@@ -107,6 +122,7 @@
           <p class="meta">Walmart · May 2011 to Dec 2018</p>
           <p>Supported customers across game systems, TVs, printers, the photo lab and wireless phones.</p>
         </article>
+        </div>
         <div class="columns">
           <div>
             <h3>Education</h3>
@@ -121,8 +137,25 @@
       </div>
     </section>
 
+    <svg class="wave" viewBox="0 0 1160 28" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#wave"/></svg>
+
     <section id="projects">
-      <h2>Projects</h2>
+      <div class="side">
+        <h2>Projects</h2>
+        <svg class="art" viewBox="0 0 140 150" aria-hidden="true">
+          <path d="M14 75C70 75 60 15 124 15"/>
+          <path d="M14 75C70 75 60 45 124 45"/>
+          <path d="M14 75H124"/>
+          <path d="M14 75C70 75 60 105 124 105"/>
+          <path d="M14 75C70 75 60 135 124 135"/>
+          <circle class="solid" cx="14" cy="75" r="6"/>
+          <circle cx="127" cy="15" r="3.5"/>
+          <circle cx="127" cy="45" r="3.5"/>
+          <circle cx="127" cy="75" r="3.5"/>
+          <circle cx="127" cy="105" r="3.5"/>
+          <circle cx="127" cy="135" r="3.5"/>
+        </svg>
+      </div>
       <div>
         <article class="item">
           <h3><a href="https://github.com/n0rthstar88/homelab-oncall-agent">Homelab On-Call Agent</a></h3>
@@ -152,8 +185,23 @@
       </div>
     </section>
 
+    <svg class="wave flip" viewBox="0 0 1160 28" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#wave"/></svg>
+
     <section id="homelab">
-      <h2>Homelab</h2>
+      <div class="side">
+        <h2>Homelab</h2>
+        <svg class="art" viewBox="0 0 140 150" aria-hidden="true">
+          <path d="M70 44V14"/>
+          <path d="M70 44C70 26 44 30 28 14"/>
+          <path d="M70 44C70 26 96 30 112 14"/>
+          <circle class="solid" cx="70" cy="10" r="4"/>
+          <circle class="solid" cx="25" cy="11" r="4"/>
+          <circle class="solid" cx="115" cy="11" r="4"/>
+          <rect class="ink" x="38" y="44" width="64" height="100" rx="5"/>
+          <path class="ink" d="M50 62H90M50 76H90M50 90H90"/>
+          <rect class="fill" x="50" y="106" width="40" height="26" rx="2"/>
+        </svg>
+      </div>
       <div>
         <p>HuffLabs is the self-hosted environment I designed, secured and run day to day.</p>
         <dl class="columns">
@@ -167,8 +215,18 @@
       </div>
     </section>
 
+    <svg class="wave" viewBox="0 0 1160 28" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#wave"/></svg>
+
     <section id="beyond">
-      <h2>Beyond work</h2>
+      <div class="side">
+        <h2>Beyond work</h2>
+        <svg class="art" viewBox="0 0 120 120" aria-hidden="true">
+          <path class="ink" d="M60 8 105 34V86L60 112 15 86V34Z"/>
+          <path d="M60 28 88 76H32Z"/>
+          <path d="M60 8V28M105 34 60 28M105 34 88 76M105 86 88 76M60 112 88 76M60 112 32 76M15 86 32 76M15 34 32 76M15 34 60 28"/>
+          <text x="60" y="65" text-anchor="middle">20</text>
+        </svg>
+      </div>
       <div>
         <p>I like making things I can hold, and games with good stories.</p>
         <div class="photos">
@@ -192,15 +250,44 @@
           <div><dt>Magic: The Gathering</dt><dd>Still a favorite way to spend an evening.</dd></div>
         </dl>
       </div>
+      <div class="side side-end">
+        <svg class="art" viewBox="0 0 120 120" aria-hidden="true">
+          <path class="ink" d="M22 98V28Q22 24 26 24H94Q98 24 98 28V98"/>
+          <rect class="ink" x="12" y="98" width="96" height="12" rx="2"/>
+          <path d="M22 44H98M22 50H98"/>
+          <path d="M60 38C60 24 76 26 88 14"/>
+          <circle class="ink" cx="94" cy="10" r="8"/>
+          <circle class="solid" cx="94" cy="10" r="2.5"/>
+          <rect class="ink plain" x="49" y="38" width="22" height="18" rx="2.5"/>
+          <path class="solid" d="M56 56H64L60 63Z"/>
+          <path class="ink" d="M32 92H88"/>
+          <path d="M44 88H76M45 84H75M47 80H73M50 76H70M53 72H67M56 68H64"/>
+        </svg>
+      </div>
     </section>
+
+    <svg class="wave flip" viewBox="0 0 1160 28" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#wave"/></svg>
 
     <section id="contact">
       <h2>Contact</h2>
-      <div>
+      <div class="contact">
+        <div>
         <p class="email"><a href="mailto:james@hufflabs.dev">james@hufflabs.dev</a></p>
         <p class="note"><a href="assets/James_Huffman_Resume.pdf">Résumé (PDF)</a> · <a href="https://github.com/n0rthstar88">GitHub</a></p>
+        </div>
+        <svg class="art closing" viewBox="0 0 300 110" aria-hidden="true">
+          <path d="M14 55C90 55 120 8 300 8"/>
+          <path d="M14 55C90 55 120 26 300 26"/>
+          <path d="M14 55C90 55 120 45 300 45"/>
+          <path d="M14 55C90 55 120 65 300 65"/>
+          <path d="M14 55C90 55 120 84 300 84"/>
+          <path d="M14 55C90 55 120 102 300 102"/>
+          <circle class="solid" cx="14" cy="55" r="7"/>
+        </svg>
       </div>
     </section>
+
+    <svg class="wave" viewBox="0 0 1160 28" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#wave"/></svg>
   </main>
 
   <footer>James · HuffLabs</footer>
