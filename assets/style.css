@@ -131,6 +131,12 @@ dt { font-weight: 500; }
 dd { margin: 0; color: var(--quiet); font-size: 14px; line-height: 1.5; }
 .four dt { font: 400 19px/1.3 var(--serif); margin-bottom: 4px; }
 
+.portrait { display: block; width: 140px; height: 140px; margin-top: 20px; border-radius: 50%; }
+.photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 8px 0 32px; }
+figure { margin: 0; }
+.photos img { display: block; width: 100%; height: auto; border-radius: 4px; }
+figcaption { margin-top: 8px; color: var(--quiet); font-size: 13px; line-height: 1.4; }
+
 .email { margin-bottom: 6px; font: 300 clamp(26px, 4vw, 34px)/1.2 var(--serif); }
 
 footer { padding: 24px var(--gutter) 40px; border-top: 1px solid var(--rule); color: var(--quiet); font-size: 13px; }
@@ -145,6 +151,10 @@ footer { padding: 24px var(--gutter) 40px; border-top: 1px solid var(--rule); co
   .strands { max-width: 320px; }
   section { grid-template-columns: 1fr; gap: 16px; padding-top: 40px; padding-bottom: 40px; }
   .columns { grid-template-columns: 1fr; }
+  .portrait { width: 112px; height: 112px; margin-top: 14px; }
+}
+@media (max-width: 480px) {
+  .photos { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) and (min-width: 480px) {
   .four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
