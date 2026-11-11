@@ -78,7 +78,7 @@
         </svg>
       </div>
       <div>
-        <p>HuffLabs is the self-hosted environment I designed, secured and run day to day.</p>
+        <p>HuffLabs is the self-hosted environment I designed, secured and run day to day. Almost all of it runs on one mini PC in a 22U rack in my office.</p>
         <dl class="columns">
           <div><dt>Virtualization</dt><dd>Proxmox VE, LXC, VMs, Docker</dd></div>
           <div><dt>Storage and backups</dt><dd>TrueNAS SCALE, ZFS, encrypted restic backups</dd></div>
@@ -87,6 +87,71 @@
           <div><dt>Monitoring</dt><dd>Checkmk and my own tools</dd></div>
           <div><dt>Operations</dt><dd>Runbooks, incident write-ups, disaster recovery docs</dd></div>
         </dl>
+
+        <h2 class="lab-h">The rack</h2>
+        <p>A 22U cabinet I picked up on Facebook Marketplace. Heavy gear goes at the bottom and the network at the top, with ten open units in the middle for a second node.</p>
+        <figure class="rack" aria-label="The 22U rack, top to bottom">
+          <div class="rack-top">Wi-Fi router, on top of the cabinet</div>
+          <div class="rack-body">
+            <div class="slot next u1"><span class="u">22</span><span class="dev">Cisco 2960-X switch</span><span class="note">In the rack with VLANs set up. Cabling it in is next.</span></div>
+            <div class="slot open u10"><span class="u">12–21</span><span class="dev">Open space</span><span class="note">Room for a second node, more storage or a patch panel.</span></div>
+            <div class="slot run u2"><span class="u">10–11</span><span class="dev">GMKtec M6 Ultra<small>on a 3D-printed 2U bracket</small></span><span class="note">Runs everything: 12 containers and VMs.</span></div>
+            <div class="slot plan u1"><span class="u">9</span><span class="dev">Cooling panel</span><span class="note">Comes with the second node.</span></div>
+            <div class="slot plan u2"><span class="u">7–8</span><span class="dev">Dell R730</span><span class="note">Planned second node.</span></div>
+            <div class="slot run u3"><span class="u">4–6</span><span class="dev">Shelf: fiber gateway and storage<small>2 × 16 TB drives</small></span><span class="note">The NAS disks, connected over USB.</span></div>
+            <div class="slot run u1"><span class="u">3</span><span class="dev">Power strip (PDU)</span><span class="note"></span></div>
+            <div class="slot plan u2"><span class="u">1–2</span><span class="dev">UPS, 1500 VA</span><span class="note">Next purchase, before any more hardware.</span></div>
+          </div>
+          <figcaption class="legend"><span class="k run"></span>Running <span class="k next"></span>Going live next <span class="k plan"></span>Planned</figcaption>
+        </figure>
+
+        <h2 class="lab-h">Everything on one mini PC</h2>
+        <p>A Ryzen 5 mini PC with 64 GB of DDR5 runs Proxmox and every service in the lab. Nothing on my home network is open to the internet: public sites come in through Cloudflare Tunnels, and I reach everything else over Tailscale.</p>
+        <figure class="m6" aria-label="How traffic reaches the mini PC, and what runs on it">
+          <div class="ingress">
+            <div class="pill">Internet</div>
+            <div class="paths">
+              <div class="path"><b>Cloudflare Tunnels</b><span>public sites</span></div>
+              <div class="path"><b>Tailscale</b><span>private access</span></div>
+            </div>
+            <p class="ports">Zero open ports on the home router</p>
+          </div>
+          <div class="host">
+            <div class="host-head"><h3>GMKtec M6 Ultra</h3><p>Ryzen 5 7640HS · 64 GB DDR5 · Proxmox VE · 12 containers and VMs</p></div>
+            <div class="groups">
+              <div class="group"><h4>Network and sign-in</h4><ul><li>Reverse proxy with TLS</li><li>Filtering DNS for the whole house</li><li>Single sign-on</li><li>Password manager</li></ul></div>
+              <div class="group"><h4>Storage</h4><ul><li>TrueNAS (VM) with ZFS pools</li><li>Daily snapshots</li><li>Encrypted restic backups</li><li>Guest backups in Proxmox</li></ul></div>
+              <div class="group"><h4>Apps</h4><ul><li>Media server and blog</li><li>File sync</li><li>Smart home (VM)</li><li>Private game server</li><li>Invite sign-ups</li></ul></div>
+              <div class="group mine"><h4>Monitoring</h4><ul><li>Checkmk</li><li><a href="https://github.com/n0rthstar88/homelab-oncall-agent">On-call agent</a> (my build)</li><li><a href="https://github.com/n0rthstar88/homelab-watchdog">Watchdog</a> (my build)</li></ul><p>Alerts and fixes land in Discord.</p></div>
+            </div>
+          </div>
+        </figure>
+
+        <h2 class="lab-h">From the dashboards</h2>
+        <div class="shots">
+          <figure>
+            <a href="/assets/homelab/proxmox-guests.webp"><img src="/assets/homelab/proxmox-guests.webp" width="1010" height="425" loading="lazy" alt="The Proxmox guest list: ten containers and two VMs on one node, each with its disk, memory and CPU use, two weeks of uptime, and a tag for its role."></a>
+            <figcaption>Proxmox: every container and VM on the M6, tagged by role.</figcaption>
+          </figure>
+        </div>
+        <div class="shots one">
+          <figure>
+            <a href="/assets/homelab/checkmk-dashboard.webp"><img src="/assets/homelab/checkmk-dashboard.webp" width="1106" height="652" loading="lazy" alt="My Checkmk dashboard: graphs for the Proxmox host's CPU, memory and network, the media server's CPU, DNS and password manager response times, internet and LAN traffic, and the router's CPU."></a>
+            <figcaption>Checkmk: the dashboard I built for the host, key services and the router.</figcaption>
+          </figure>
+          <figure>
+            <a href="/assets/homelab/dns-dashboard.webp"><img src="/assets/homelab/dns-dashboard.webp" width="1244" height="710" loading="lazy" alt="The Technitium DNS dashboard for one hour: 5,865 queries from 9 clients, 1,379 of them blocked (23.5 percent), with a graph of queries by result."></a>
+            <figcaption>Filtering DNS: about a quarter of the house's lookups blocked in one hour.</figcaption>
+          </figure>
+        </div>
+
+        <h2 class="lab-h">What's next</h2>
+        <ul class="lab-next">
+          <li><b>Bring the Cisco 2960-X online.</b> The VLANs are already set up, so once it's cabled in, the work laptop and smart-home devices each get their own network.</li>
+          <li><b>A rack UPS</b> before any more hardware, so a power blip can't take the lab down.</li>
+          <li><b>2.5 GbE networking</b> for the M6, past the onboard 1 GbE limit.</li>
+          <li><b>A Dell R730 as a second node</b>, so services can move between machines.</li>
+        </ul>
       </div>
     </section>
 
