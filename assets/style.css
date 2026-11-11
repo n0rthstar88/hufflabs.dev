@@ -258,3 +258,8 @@ footer { width: 100%; box-sizing: border-box; }
 .guide-card { background: var(--paper); }
 @media (max-width: 760px) { .topo { opacity: 0.26; } .topo.major { opacity: 0.36; } }
 @media print { .backdrop { display: none; } }
+
+/* Map-style dividers and art */
+.wave .trail { stroke-dasharray: 2 7; stroke-linecap: round; stroke-width: 1.4; }
+.wave .trail-tick { stroke-width: 1.2; }
+.art .cmp { font: 400 12px var(--sans); fill: var(--quiet); }

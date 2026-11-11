@@ -27,9 +27,9 @@
   <svg class="sprite" width="0" height="0" aria-hidden="true">
     <defs>
       <g id="wave">
-        <path d="M0 8C200 8 300 20 420 14S640 2 800 14 1040 22 1160 12"/>
-        <path d="M0 20C200 20 300 8 420 14S640 26 800 14 1040 4 1160 16"/>
-        <circle class="wave-node" cx="420" cy="14" r="3.5"/>
+        <path class="trail" d="M0 15C140 15 230 8 360 10S520 20 580 17 760 6 880 11 1060 18 1160 14"/>
+        <path class="wave-node" d="M574 13l6-9 6 9z"/>
+        <path class="trail-tick" d="M574 18h12"/>
       </g>
     </defs>
   </svg>
@@ -80,13 +80,14 @@
         <p class="note"><a href="/assets/James_Huffman_Resume.pdf">Résumé (PDF)</a> · <a href="https://github.com/n0rthstar88">GitHub</a></p>
         </div>
         <svg class="art closing" viewBox="0 0 300 110" aria-hidden="true">
-          <path d="M14 55C90 55 120 8 300 8"/>
-          <path d="M14 55C90 55 120 26 300 26"/>
-          <path d="M14 55C90 55 120 45 300 45"/>
-          <path d="M14 55C90 55 120 65 300 65"/>
-          <path d="M14 55C90 55 120 84 300 84"/>
-          <path d="M14 55C90 55 120 102 300 102"/>
-          <circle class="solid" cx="14" cy="55" r="7"/>
+          <circle class="ink plain" cx="150" cy="55" r="44"/>
+          <circle cx="150" cy="55" r="36"/>
+          <path d="M150 7V15M150 95V103M102 55H110M190 55H198M118 23l5 5M182 87l-5-5M182 23l-5 5M118 87l5-5"/>
+          <path class="solid" d="M150 21 158 55H142Z"/>
+          <path class="ink plain" d="M150 89 142 55H158Z"/>
+          <circle class="solid" cx="150" cy="55" r="3.5"/>
+          <text x="150" y="6" text-anchor="middle" class="cmp">N</text>
+          <path d="M14 55H92M208 55H286" stroke-dasharray="3 6"/>
         </svg>
       </div>
     </section>
