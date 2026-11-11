@@ -236,27 +236,23 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 main { flex: 1 0 auto; width: 100%; }
 footer { width: 100%; box-sizing: border-box; }
 
-/* Background designs */
-:root { --dot: rgba(115, 106, 92, 0.16); --bd-line: var(--strand); }
-@media (prefers-color-scheme: dark) { :root { --dot: rgba(167, 158, 142, 0.10); } }
+/* Background designs: dot grid, soft glows, topographic lines */
+:root { --dot: rgba(115, 106, 92, 0.30); --topo: #a8977c; --glow-a: rgba(196, 160, 104, 0.30); --glow-b: rgba(168, 151, 124, 0.34); --glow-c: rgba(212, 184, 140, 0.20); }
+@media (prefers-color-scheme: dark) { :root { --dot: rgba(167, 158, 142, 0.20); --topo: #8a7f6b; --glow-a: rgba(196, 160, 104, 0.13); --glow-b: rgba(120, 100, 170, 0.13); --glow-c: rgba(212, 184, 140, 0.07); } }
 body {
-  position: relative;
-  background-image: radial-gradient(var(--dot) 1px, transparent 1.4px);
-  background-size: 26px 26px;
-  background-position: 13px 13px;
+  background-image: radial-gradient(var(--dot) 1.9px, transparent 2.5px);
+  background-size: 28px 28px;
+  background-position: 14px 14px;
 }
-.backdrop {
-  position: absolute; left: 0; right: 0; top: 0; height: min(980px, 140vh);
-  overflow: hidden; pointer-events: none; z-index: -1;
-  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
-  mask-image: linear-gradient(to bottom, #000 55%, transparent);
-}
-.backdrop svg { display: block; width: 100%; height: 100%; }
+.backdrop { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: -1; }
+.backdrop svg { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
 .backdrop.flip-x svg { transform: scaleX(-1); }
-.bd-strands { fill: none; stroke: var(--bd-line); stroke-width: 1; opacity: 0.42; }
-.bd-soft { opacity: 0.3; }
-.bd-node { fill: var(--strand); opacity: 0.5; }
-.bd-dot { fill: var(--strand); opacity: 0.4; }
+.topo { fill: none; stroke: var(--topo); stroke-width: 1.5; opacity: 0.34; vector-effect: non-scaling-stroke; }
+.topo.major { stroke-width: 2.4; opacity: 0.46; }
+.glow { position: absolute; border-radius: 50%; }
+.g1 { width: 70vw; height: 70vw; left: -24vw; top: -30vw; background: radial-gradient(closest-side, var(--glow-a), transparent); }
+.g2 { width: 75vw; height: 75vw; right: -28vw; bottom: -34vw; background: radial-gradient(closest-side, var(--glow-b), transparent); }
+.g3 { width: 44vw; height: 44vw; left: 38vw; top: 30vh; background: radial-gradient(closest-side, var(--glow-c), transparent); }
 .guide-card { background: var(--paper); }
-@media (max-width: 760px) { .backdrop { height: 720px; } .bd-strands { opacity: 0.22; } .bd-soft { opacity: 0.14; } }
+@media (max-width: 760px) { .topo { opacity: 0.26; } .topo.major { opacity: 0.36; } }
 @media print { .backdrop { display: none; } body { background-image: none; } }
