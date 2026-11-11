@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Projects | James, HuffLabs</title>
+  <meta name="description" content="Monitoring agents, a private game server, Linux desktop apps and open-source contributions by James.">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects | James, HuffLabs">
+  <meta property="og:description" content="Monitoring agents, a private game server, Linux desktop apps and open-source contributions by James.">
+  <meta property="og:url" content="https://hufflabs.dev/projects/">
+  <link rel="canonical" href="https://hufflabs.dev/projects/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <svg class="sprite" width="0" height="0" aria-hidden="true">
+    <defs>
+      <g id="wave">
+        <path d="M0 8C200 8 300 20 420 14S640 2 800 14 1040 22 1160 12"/>
+        <path d="M0 20C200 20 300 8 420 14S640 26 800 14 1040 4 1160 16"/>
+        <circle class="wave-node" cx="420" cy="14" r="3.5"/>
+      </g>
+    </defs>
+  </svg>
+
+  <header class="top">
+    <a class="brand" href="/">
+      <svg class="mark" viewBox="0 0 36 44" width="32" height="39" aria-hidden="true">
+        <g class="mark-strands">
+          <path d="M18 14V5"/>
+          <path d="M18 14C18 9 11 11 7 7"/>
+          <path d="M18 14C18 9 25 11 29 7"/>
+        </g>
+        <circle class="mark-dot" cx="18" cy="3.6" r="2"/>
+        <circle class="mark-dot" cx="6" cy="6" r="2"/>
+        <circle class="mark-dot" cx="30" cy="6" r="2"/>
+        <rect class="mark-case" x="8" y="14" width="20" height="29" rx="2.5"/>
+        <path class="mark-case" d="M12 20h12M12 25h12"/>
+        <rect class="mark-fill" x="12" y="31" width="12" height="8" rx="1"/>
+      </svg>
+      <span class="brand-text">
+        <span class="wordmark">Huff<i>Labs</i></span>
+        <span class="slogan">Curious since Windows 95</span>
+      </span>
+    </a>
+    <nav aria-label="Main">
+      <a href="/about/">About</a>
+      <a href="/experience/">Experience</a>
+      <a href="/projects/" aria-current="page">Projects</a>
+      <a href="/homelab/">Homelab</a>
+      <a href="/beyond/">Beyond work</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="page-head">
+      <h1>Projects</h1>
+      <p class="lede">Monitoring agents, a private game server, Linux desktop apps and open-source work.</p>
+    </div>
+
+    <svg class="wave" viewBox="0 0 1160 28" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#wave"/></svg>
+
+    <section id="projects">
+      <div class="side">
+        <svg class="art" viewBox="0 0 140 150" aria-hidden="true">
+          <path d="M14 75C70 75 60 15 124 15"/>
+          <path d="M14 75C70 75 60 45 124 45"/>
+          <path d="M14 75H124"/>
+          <path d="M14 75C70 75 60 105 124 105"/>
+          <path d="M14 75C70 75 60 135 124 135"/>
+          <circle class="solid" cx="14" cy="75" r="6"/>
+          <circle cx="127" cy="15" r="3.5"/>
+          <circle cx="127" cy="45" r="3.5"/>
+          <circle cx="127" cy="75" r="3.5"/>
+          <circle cx="127" cy="105" r="3.5"/>
+          <circle cx="127" cy="135" r="3.5"/>
+        </svg>
+      </div>
+      <div>
+        <article class="item">
+          <h3><a href="https://github.com/n0rthstar88/homelab-oncall-agent">Homelab On-Call Agent</a></h3>
+          <p class="meta">Python · Checkmk · Proxmox · AI agents</p>
+          <p>Self-healing monitoring. Known problems get a safe, allowlisted fix, and anything else goes to an AI agent that can only act through a security gatekeeper I built.</p>
+          <div class="shots">
+            <figure>
+              <a href="/assets/projects/oncall-triage.webp"><img src="/assets/projects/oncall-triage.webp" width="1052" height="590" loading="lazy" alt="A Discord report from the on-call agent: a Tailscale alert that recovered by itself, with the evidence it checked and a note for me. Host names are examples."></a>
+              <figcaption>A triage report: what broke, the evidence, what it did. Host names are examples.</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="item">
+          <h3><a href="https://github.com/n0rthstar88/homelab-watchdog">Homelab Watchdog</a></h3>
+          <p class="meta">Python · Discord</p>
+          <p>A security and availability monitor that alerts only when something changes, and takes commands from Discord.</p>
+          <div class="shots stack">
+            <figure>
+              <a href="/assets/projects/watchdog-alert.webp"><img src="/assets/projects/watchdog-alert.webp" width="653" height="216" loading="lazy" alt="Discord alerts from the watchdog: a device went offline, then a host became reachable again. Host names and addresses are examples."></a>
+              <figcaption>Alerts only when something changes. Names and addresses are examples.</figcaption>
+            </figure>
+            <figure>
+              <a href="/assets/projects/watchdog-ping.webp"><img src="/assets/projects/watchdog-ping.webp" width="1100" height="159" loading="lazy" alt="The watchdog answering a ping command in Discord with its uptime, poll count, last error and service status."></a>
+              <figcaption>Commands from Discord, like a health check.</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="item">
+          <h3><a href="https://github.com/n0rthstar88/hufflabs-ro">HuffLabs RO</a></h3>
+          <p class="meta">Go · Tailscale · GitHub Actions</p>
+          <p>A private game server for friends, reachable only over Tailscale, with invite-only sign-up, Windows and Linux installers, and a launcher that verifies signed updates. Tested on Linux and Windows before every release.</p>
+          <div class="shots">
+            <figure>
+              <a href="/assets/projects/ro-launcher.webp"><img src="/assets/projects/ro-launcher.webp" width="640" height="360" loading="lazy" alt="The HuffLabs RO launcher downloading a game update, with a progress bar."></a>
+              <figcaption>The launcher fetching a signed update.</figcaption>
+            </figure>
+            <figure>
+              <a href="/assets/projects/ro-signup.webp"><img src="/assets/projects/ro-signup.webp" width="1000" height="781" loading="lazy" alt="The HuffLabs RO sign-up page with download buttons for Windows and Linux and an invite-code account form."></a>
+              <figcaption>Invite-only sign-up and downloads.</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="item">
+          <h3><a href="https://github.com/n0rthstar88/peripheralhub">PeripheralHub</a></h3>
+          <p class="meta">Python · GTK4</p>
+          <p>A Linux desktop app for keyboard, mouse, display and battery settings, talking directly to the hardware.</p>
+          <div class="shots">
+            <figure>
+              <a href="/assets/projects/peripheralhub-lighting.webp"><img src="/assets/projects/peripheralhub-lighting.webp" width="1057" height="720" loading="lazy" alt="PeripheralHub showing keyboard lighting settings: effect, brightness, speed and color."></a>
+              <figcaption>Keyboard lighting.</figcaption>
+            </figure>
+            <figure>
+              <a href="/assets/projects/peripheralhub-dpi.webp"><img src="/assets/projects/peripheralhub-dpi.webp" width="1024" height="720" loading="lazy" alt="PeripheralHub showing mouse DPI stages and polling rate."></a>
+              <figcaption>Mouse DPI stages.</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="item">
+          <h3><a href="https://github.com/n0rthstar88/omarchy-snap-layouts">Snap Layouts for Omarchy</a></h3>
+          <p class="meta">QML · Lua</p>
+          <p>Drag a window to the top of the screen to pick a layout.</p>
+          <div class="shots">
+            <figure>
+              <a href="/assets/projects/snap-picker.webp"><img src="/assets/projects/snap-picker.webp" width="1100" height="619" loading="lazy" alt="A window being dragged to the top of the screen, showing a row of layout choices."></a>
+              <figcaption>Drag to the top to pick a layout.</figcaption>
+            </figure>
+            <figure>
+              <a href="/assets/projects/snap-snapped.webp"><img src="/assets/projects/snap-snapped.webp" width="1100" height="619" loading="lazy" alt="Three windows arranged side by side after picking a layout."></a>
+              <figcaption>The windows snapped into place.</figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="item">
+          <h3><a href="https://github.com/gravestench/dark-magic/pulls?q=is%3Apr+is%3Amerged+author%3An0rthstar88">Dark Magic</a></h3>
+          <p class="meta">Go · Lua · 18 merged pull requests</p>
+          <p>Contributions to an open-source Diablo II engine, working with a team through code review.</p>
+          <div class="shots">
+            <figure>
+              <a href="/assets/projects/darkmagic-code.webp"><img src="/assets/projects/darkmagic-code.webp" width="1000" height="959" loading="lazy" alt="Lua code from Dark Magic, under the project's red candle logo: the function that scales a player's kill experience by the level difference between the player and the monster."></a>
+              <figcaption>Kill experience by level difference, recovered from the original game's logic.</figcaption>
+            </figure>
+            <figure>
+              <a href="/assets/projects/darkmagic-prs.webp"><img src="/assets/projects/darkmagic-prs.webp" width="1085" height="765" loading="lazy" alt="GitHub list of 18 merged pull requests by n0rthstar88 in the Dark Magic repository, each with passing checks."></a>
+              <figcaption>18 merged pull requests, each reviewed and passing CI.</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <svg class="wave flip" viewBox="0 0 1160 28" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#wave"/></svg>
+  </main>
+
+  <footer>James · HuffLabs · <a href="mailto:james@hufflabs.dev">james@hufflabs.dev</a></footer>
+</body>
+</html>

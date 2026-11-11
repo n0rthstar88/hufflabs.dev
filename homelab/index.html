@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Homelab | James, HuffLabs</title>
+  <meta name="description" content="HuffLabs, the self-hosted environment James designed, secured and runs day to day.">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Homelab | James, HuffLabs">
+  <meta property="og:description" content="HuffLabs, the self-hosted environment James designed, secured and runs day to day.">
+  <meta property="og:url" content="https://hufflabs.dev/homelab/">
+  <link rel="canonical" href="https://hufflabs.dev/homelab/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <svg class="sprite" width="0" height="0" aria-hidden="true">
+    <defs>
+      <g id="wave">
+        <path d="M0 8C200 8 300 20 420 14S640 2 800 14 1040 22 1160 12"/>
+        <path d="M0 20C200 20 300 8 420 14S640 26 800 14 1040 4 1160 16"/>
+        <circle class="wave-node" cx="420" cy="14" r="3.5"/>
+      </g>
+    </defs>
+  </svg>
+
+  <header class="top">
+    <a class="brand" href="/">
+      <svg class="mark" viewBox="0 0 36 44" width="32" height="39" aria-hidden="true">
+        <g class="mark-strands">
+          <path d="M18 14V5"/>
+          <path d="M18 14C18 9 11 11 7 7"/>
+          <path d="M18 14C18 9 25 11 29 7"/>
+        </g>
+        <circle class="mark-dot" cx="18" cy="3.6" r="2"/>
+        <circle class="mark-dot" cx="6" cy="6" r="2"/>
+        <circle class="mark-dot" cx="30" cy="6" r="2"/>
+        <rect class="mark-case" x="8" y="14" width="20" height="29" rx="2.5"/>
+        <path class="mark-case" d="M12 20h12M12 25h12"/>
+        <rect class="mark-fill" x="12" y="31" width="12" height="8" rx="1"/>
+      </svg>
+      <span class="brand-text">
+        <span class="wordmark">Huff<i>Labs</i></span>
+        <span class="slogan">Curious since Windows 95</span>
+      </span>
+    </a>
+    <nav aria-label="Main">
+      <a href="/about/">About</a>
+      <a href="/experience/">Experience</a>
+      <a href="/projects/">Projects</a>
+      <a href="/homelab/" aria-current="page">Homelab</a>
+      <a href="/beyond/">Beyond work</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="page-head">
+      <h1>Homelab</h1>
+      <p class="lede">The self-hosted environment I designed, secured and run day to day.</p>
+    </div>
+
+    <svg class="wave flip" viewBox="0 0 1160 28" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#wave"/></svg>
+
+    <section id="homelab">
+      <div class="side">
+        <svg class="art" viewBox="0 0 140 150" aria-hidden="true">
+          <path d="M70 44V14"/>
+          <path d="M70 44C70 26 44 30 28 14"/>
+          <path d="M70 44C70 26 96 30 112 14"/>
+          <circle class="solid" cx="70" cy="10" r="4"/>
+          <circle class="solid" cx="25" cy="11" r="4"/>
+          <circle class="solid" cx="115" cy="11" r="4"/>
+          <rect class="ink" x="38" y="44" width="64" height="100" rx="5"/>
+          <path class="ink" d="M50 62H90M50 76H90M50 90H90"/>
+          <rect class="fill" x="50" y="106" width="40" height="26" rx="2"/>
+        </svg>
+      </div>
+      <div>
+        <p>HuffLabs is the self-hosted environment I designed, secured and run day to day.</p>
+        <dl class="columns">
+          <div><dt>Virtualization</dt><dd>Proxmox VE, LXC, VMs, Docker</dd></div>
+          <div><dt>Storage and backups</dt><dd>TrueNAS SCALE, ZFS, encrypted restic backups</dd></div>
+          <div><dt>Networking</dt><dd>Filtering DNS, reverse proxy with TLS, Tailscale, Cloudflare Tunnels</dd></div>
+          <div><dt>Identity and security</dt><dd>Authentik SSO, role-based firewall rules, fail2ban, recurring audits</dd></div>
+          <div><dt>Monitoring</dt><dd>Checkmk and my own tools</dd></div>
+          <div><dt>Operations</dt><dd>Runbooks, incident write-ups, disaster recovery docs</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <svg class="wave" viewBox="0 0 1160 28" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#wave"/></svg>
+  </main>
+
+  <footer>James · HuffLabs · <a href="mailto:james@hufflabs.dev">james@hufflabs.dev</a></footer>
+</body>
+</html>
