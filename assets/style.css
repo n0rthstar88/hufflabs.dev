@@ -86,10 +86,10 @@ a:hover { color: var(--quiet); }
 .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
 .brand:hover { color: inherit; }
 .mark { flex: none; display: block; }
-.mark-strands, .mark-case { fill: none; stroke-width: 1.6; stroke-linecap: round; }
-.mark-strands { stroke: var(--strand); }
+.mark-case { fill: none; stroke-width: 1.6; stroke-linecap: round; }
+.mark-pin { fill: var(--strand); }
+.mark-hole { fill: var(--paper); }
 .mark-case { stroke: var(--ink); }
-.mark-dot { fill: var(--ink); }
 .mark-fill { fill: var(--strand); }
 .brand-text { display: flex; flex-direction: column; }
 .wordmark { font: 400 21px/1.15 var(--serif); letter-spacing: -0.01em; }
