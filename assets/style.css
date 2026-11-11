@@ -209,6 +209,8 @@ footer { padding: 24px var(--gutter) 40px; color: var(--quiet); font-size: 13px;
 /* Project screenshots */
 .shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; margin-top: 18px; }
 .shots.stack { grid-template-columns: 1fr; }
+/* A card with one screenshot shows it full width, under the title and text */
+.shots:has(> figure:only-child) { grid-template-columns: 1fr; }
 .shots.stack a { width: fit-content; max-width: 100%; }
 .shots.stack img { width: auto; max-width: 100%; }
 .shots a { display: block; }
@@ -237,8 +239,8 @@ main { flex: 1 0 auto; width: 100%; }
 footer { width: 100%; box-sizing: border-box; }
 
 /* Background designs: dot grid, soft glows, topographic lines */
-:root { --dot: rgba(115, 106, 92, 0.34); --topo: #a8977c; --glow-a: rgba(222, 168, 92, 0.42); --glow-b: rgba(196, 150, 104, 0.40); --glow-c: rgba(230, 190, 120, 0.30); }
-@media (prefers-color-scheme: dark) { :root { --dot: rgba(167, 158, 142, 0.20); --topo: #8a7f6b; --glow-a: rgba(214, 160, 90, 0.20); --glow-b: rgba(130, 105, 190, 0.20); --glow-c: rgba(222, 180, 120, 0.11); } }
+:root { --dot: rgba(115, 106, 92, 0.34); --topo: #a8977c; --glow-a: rgba(222, 168, 92, 0.32); --glow-b: rgba(196, 150, 104, 0.30); --glow-c: rgba(230, 190, 120, 0.22); }
+@media (prefers-color-scheme: dark) { :root { --dot: rgba(167, 158, 142, 0.20); --topo: #8a7f6b; --glow-a: rgba(214, 160, 90, 0.15); --glow-b: rgba(130, 105, 190, 0.15); --glow-c: rgba(222, 180, 120, 0.08); } }
 .backdrop { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: -1; }
 .backdrop::before {
   content: ""; position: absolute; inset: 0;
@@ -266,29 +268,28 @@ footer { width: 100%; box-sizing: border-box; }
 
 /* Background motion (off for reduced-motion). --scroll comes from /assets/motion.js. */
 @media (prefers-reduced-motion: no-preference) {
-  .topo-drift { transform-box: view-box; transform-origin: 50% 50%; animation: topo-drift 18s ease-in-out infinite alternate; }
+  .topo-drift { transform-box: view-box; transform-origin: 50% 50%; animation: topo-drift 80s ease-in-out infinite alternate; }
   @keyframes topo-drift {
     0% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-3%, 2%) scale(1.08); }
-    100% { transform: translate(2.5%, -1.5%) scale(1.04); }
+    50% { transform: translate(-1.5%, 1%) scale(1.03); }
+    100% { transform: translate(1.2%, -0.8%) scale(1.015); }
   }
   /* Lines fade in and out on staggered, uneven timers so it reads as random */
-  .topo { animation: topo-fade 7s ease-in-out infinite; }
-  .topo:nth-of-type(7n+1) { animation-duration: 5s; animation-delay: -2s; }
-  .topo:nth-of-type(7n+2) { animation-duration: 9s; animation-delay: -5s; }
-  .topo:nth-of-type(7n+3) { animation-duration: 6s; animation-delay: -1s; }
-  .topo:nth-of-type(7n+4) { animation-duration: 11s; animation-delay: -7s; }
-  .topo:nth-of-type(7n+5) { animation-duration: 6.5s; animation-delay: -3s; }
-  .topo:nth-of-type(7n+6) { animation-duration: 13s; animation-delay: -9s; }
-  .topo:nth-of-type(7n)   { animation-duration: 8s; animation-delay: -4s; }
+  .topo { animation: topo-fade 28s ease-in-out infinite; }
+  .topo:nth-of-type(7n+1) { animation-duration: 22s; animation-delay: -8s; }
+  .topo:nth-of-type(7n+2) { animation-duration: 34s; animation-delay: -19s; }
+  .topo:nth-of-type(7n+3) { animation-duration: 25s; animation-delay: -4s; }
+  .topo:nth-of-type(7n+4) { animation-duration: 41s; animation-delay: -27s; }
+  .topo:nth-of-type(7n+5) { animation-duration: 26s; animation-delay: -12s; }
+  .topo:nth-of-type(7n+6) { animation-duration: 47s; animation-delay: -33s; }
+  .topo:nth-of-type(7n)   { animation-duration: 31s; animation-delay: -15s; }
   @keyframes topo-fade {
-    0%, 100% { opacity: calc(var(--o) * 1.25); }
-    45% { opacity: 0.02; }
-    60% { opacity: calc(var(--o) * 0.2); }
+    0%, 100% { opacity: calc(var(--o) * 1.1); }
+    50% { opacity: calc(var(--o) * 0.25); }
   }
   /* Glows travel across and down the page as you scroll */
-  .glow { transition: transform 0.35s ease-out; will-change: transform; }
-  .g1 { transform: translate(calc(var(--scroll, 0) * 62vw), calc(var(--scroll, 0) * 70vh)); }
-  .g2 { transform: translate(calc(var(--scroll, 0) * -55vw), calc(var(--scroll, 0) * -55vh)); }
-  .g3 { transform: translate(calc(-30vw + var(--scroll, 0) * 50vw), calc(-25vh + var(--scroll, 0) * 70vh)); }
+  .glow { transition: transform 2.4s cubic-bezier(0.22, 0.61, 0.36, 1); will-change: transform; }
+  .g1 { transform: translate(calc(var(--scroll, 0) * 26vw), calc(var(--scroll, 0) * 30vh)); }
+  .g2 { transform: translate(calc(var(--scroll, 0) * -24vw), calc(var(--scroll, 0) * -24vh)); }
+  .g3 { transform: translate(calc(-12vw + var(--scroll, 0) * 22vw), calc(-10vh + var(--scroll, 0) * 30vh)); }
 }
